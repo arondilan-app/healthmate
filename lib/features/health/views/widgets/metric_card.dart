@@ -25,7 +25,8 @@ class MetricCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final formatter = NumberFormat.decimalPattern();
-    final progress = goal <= 0 ? 0.0 : (value / goal).clamp(0.0, 1.0);
+    final double progress =
+        goal <= 0 ? 0.0 : (value / goal).clamp(0.0, 1.0).toDouble();
     final percent = (progress * 100).round();
 
     return Card(

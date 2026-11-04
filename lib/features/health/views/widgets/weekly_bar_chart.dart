@@ -49,9 +49,10 @@ class WeeklyBarChart extends StatelessWidget {
                     const SizedBox(height: 4),
                     Container(
                       height: valueOf(d) == 0
-                          ? 4
+                          ? 4.0
                           : (_maxBarHeight * valueOf(d) / maxValue)
-                              .clamp(4.0, _maxBarHeight),
+                              .clamp(4.0, _maxBarHeight)
+                              .toDouble(),
                       decoration: BoxDecoration(
                         color: color,
                         borderRadius: BorderRadius.circular(6),
